@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>6</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">6</td></tr>
+</thead><tbody>
+<!--Manually assigned roles should persist, even if the role is mapped, and the user is not in it-->
+<!--Log Admin In-->
+<tr>
+	<td>rollup</td>
+	<td>local_user_login</td>
+	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+</tr>
+<!--Assign the user a role he doesn't have, that doesn't map-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=edit-roles-${workgroup_no_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Login and Logout-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<!--Log back in as an admin-->
+<tr>
+	<td>rollup</td>
+	<td>local_user_login</td>
+	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-roles-${workgroup_no_id}</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-roles-${workgroup_no_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

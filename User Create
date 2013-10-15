@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>User Create</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">User Create</td></tr>
+</thead><tbody>
+<!--User Create-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Verify user is not there-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid} has been deleted</td>
+	<td></td>
+</tr>
+<!--* If the user has not been seen before, a new account should be created automatically using REMOTE_USER@stanford.edu as the username. * The password should be random.  * The email should be set to the value of $_SERVER["WEBAUTH_LDAP_MAIL"], which is the variable containing the user's preferred email address (if they have set it).  If that value is empty, REMOTE_USER@stanford.edu should be used instead.  * On account creation, the user should be given a role.  The role is "SUNet User" by default, but can be changed by a person who can administer the module.  Enabling the WebAuth module should create the "SUNet User" role if it does not already exist.-->
+<!--User is created and email address is used-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<!--StanfordWho email is used-->
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-mail</td>
+	<td>${email}</td>
+</tr>
+</tbody></table>
+</body>
+</html>

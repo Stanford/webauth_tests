@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>Prep</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Prep</td></tr>
+</thead><tbody>
+<!--TODO: Make sure to Disable Auto Path-->
+<!--TODO: Content Access needs to be enabled for individual page content-->
+<tr>
+	<td>store</td>
+	<td>https://www.stanford.edu</td>
+	<td>base_url</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/group/group-name/cgi-bin/drupal-name</td>
+	<td>site_dir</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${base_url}${site_dir}</td>
+	<td>site_url</td>
+</tr>
+<!--SUNet User-->
+<tr>
+	<td>store</td>
+	<td>sunetid-email@stanford.edu</td>
+	<td>email</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>sunetid@stanford.edu</td>
+	<td>sunetid</td>
+</tr>
+<!--Admin User-->
+<tr>
+	<td>store</td>
+	<td>admin</td>
+	<td>admin_id</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>password</td>
+	<td>admin_pwd</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>5</td>
+	<td>sunet_role_id</td>
+</tr>
+<!--This is the workgroup the user is in, and the role he should get-->
+<tr>
+	<td>store</td>
+	<td>Stanford Staff</td>
+	<td>test_role</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>stanford:staff</td>
+	<td>workgroup_yes</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>9</td>
+	<td>test_role_id</td>
+</tr>
+<!--Another group the user is in-->
+<tr>
+	<td>store</td>
+	<td>stanford:stanford</td>
+	<td>workgroup_yes_2</td>
+</tr>
+<!--A workgroup the user is not in-->
+<tr>
+	<td>store</td>
+	<td>Stanford Faculty</td>
+	<td>workgroup_no_name</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>stanford:faculty</td>
+	<td>workgroup_no</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>11</td>
+	<td>workgroup_no_id</td>
+</tr>
+<!--Another workgroup the user is not in-->
+<tr>
+	<td>store</td>
+	<td>Stanford Student</td>
+	<td>workgroup_no_2_name</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>stanford:student</td>
+	<td>workgroup_no_2</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>7</td>
+	<td>workgroup_no_2_id</td>
+</tr>
+<!--Misc-->
+<tr>
+	<td>store</td>
+	<td>3</td>
+	<td>html_format_id</td>
+</tr>
+<!--Sometime response can be slow, so bump up the timeout-->
+<tr>
+	<td>setTimeout</td>
+	<td>240000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>20</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">20</td></tr>
+</thead><tbody>
+<!--Primary ID error on webauth_history_insert on login / logout and login-->
+<!--Log Admin In-->
+<tr>
+	<td>rollup</td>
+	<td>local_user_login</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td></td>
+</tr>
+<!--Refresh WebAuth module settings-->
+<tr>
+	<td>rollup</td>
+	<td>disable_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>uninstall_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>enable_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Login as SUNet User-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Login again as SUNet User-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Logout-->
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>Warning</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

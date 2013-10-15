@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>63</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">63</td></tr>
+</thead><tbody>
+<!--New User gets role from mapping even if the Rules module is enabled-->
+<!--Log out and log back in-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Create a new mapping for a workgroup the user is in-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=new_rid</td>
+	<td>label=${test_role}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=new_group</td>
+	<td>${workgroup_yes}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=new_submit</td>
+	<td></td>
+</tr>
+<!--Make sure that the Rules module is turned on-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/build/modules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>check</td>
+	<td>id=edit-status-rules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-status-rules</td>
+	<td>on</td>
+</tr>
+<!--Delete the user (which was created by previous tests)-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Verify user is no longer there-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid} has been deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Log in as the new user and log out-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Log back in as an admin-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Verify that the user did, in fact, get the right role-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-roles-${sunet_role_id}</td>
+	<td>on</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-roles-${test_role_id}</td>
+	<td>on</td>
+</tr>
+<!--Clean up by removing the mapping-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Remove Mapping']</td>
+	<td></td>
+</tr>
+<!--Clean up by disabling the Rules module-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/build/modules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-status-rules</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-status-rules</td>
+	<td>off</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

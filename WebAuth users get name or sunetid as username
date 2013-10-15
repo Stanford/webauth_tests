@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>WebAuth users get name or sunetid as username</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">WebAuth users get name or sunetid as username</td></tr>
+</thead><tbody>
+<!--New WebAuth users get a username based on their LDAP display name, and if there is a duplicate, revert to the earlier behavior: using the SUNetID-->
+<!--First create a WebAuth user, and then delete it (we create it first to avoid errors when trying to delete a user that is not there)-->
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in using WebAuth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/admin/people/people</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit-user-cancel-method--5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<!--Verify user is not there-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${username} has been deleted</td>
+	<td></td>
+</tr>
+<!--Now, create a local user with the same Username-->
+<tr>
+	<td>open</td>
+	<td>${site_dir}/admin/people/create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-mail</td>
+	<td>nobody@stanford.edu</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass-pass1</td>
+	<td>local</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass-pass2</td>
+	<td>local</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Created a new user account for ${username}</td>
+	<td></td>
+</tr>
+<!--Now, login as the WebAuth user-->
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log in using WebAuth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/admin/people/people</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${username}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit-user-cancel-method--5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<!--Verify user is not there-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${username} has been deleted</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_dir}/admin/people/people</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-cancel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit-user-cancel-method--5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForTextNotPresent</td>
+	<td>100%</td>
+	<td></td>
+</tr>
+<!--Verify user is not there-->
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid} has been deleted</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

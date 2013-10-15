@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>custom_restrict_message</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">custom_restrict_message</td></tr>
+</thead><tbody>
+<!--Custom Restrict Message-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Set the custom message-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/settings/webauth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-webauth-restrict-message</td>
+	<td>This is a custom restrict message.</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Log in as the WebAuth user-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Login with your SUNetID</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Log back in as admin, verify that the WebAuth user doesn't have the role-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=edit-roles-${workgroup_no_id}</td>
+	<td>off</td>
+</tr>
+<!--Create a page the user cannot see-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/node/add/page</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-title</td>
+	<td>This page is restricted to a group the user is not in</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit-format-${html_format_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-body</td>
+	<td>This page is restricted to a group the user is not in</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-path</td>
+	<td>restricted-to-workgroup-no</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Access control</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit-view-${workgroup_no_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-view-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-view-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-view-${sunet_role_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-view-own-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uncheck</td>
+	<td>id=edit-view-own-2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--make sure post-login destination is empty, or the test will fail-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/admin/settings/webauth</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-webauth-destination</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<!--Visit the protected page, should log the user in automatically-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/restricted-to-workgroup-no</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>This is a custom restrict message.</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>${sunetid}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>My account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/user/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>${admin_id}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>${admin_pwd}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<!--Clean up by deleting the page-->
+<tr>
+	<td>open</td>
+	<td>${base_url}${site_dir}/restricted-to-workgroup-no</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-delete</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.stanford.edu/" />
+<title>Disable, Uninstall and Re-enable WebAuth</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Disable, Uninstall and Re-enable WebAuth</td></tr>
+</thead><tbody>
+<!--Log Admin In-->
+<tr>
+	<td>rollup</td>
+	<td>local_user_login</td>
+	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+</tr>
+<!--Refresh WebAuth module settings-->
+<tr>
+	<td>rollup</td>
+	<td>disable_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>uninstall_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+<tr>
+	<td>rollup</td>
+	<td>enable_module</td>
+	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="Prep">Prep</a></td></tr>
+<tr><td><a href="Enabled Needed Modules">Enabled Needed Modules</a></td></tr>
+<tr><td><a href="configure-content-access">Configure Content Access</a></td></tr>
+<tr><td><a href="Local Accounts">Local Accounts</a></td></tr>
+<tr><td><a href="User Create">User Create</a></td></tr>
+<tr><td><a href="Username Password">Username Password</a></td></tr>
+<tr><td><a href="Default Role and Username">Default Role and Username</a></td></tr>
+<tr><td><a href="Dirty URLs Login">Dirty URLs Login</a></td></tr>
+<tr><td><a href="User gets role">User gets role</a></td></tr>
+<tr><td><a href="User does not get role">User does not get role</a></td></tr>
+<tr><td><a href="custom_restrict_message">custom_restrict_message</a></td></tr>
+<tr><td><a href="3">#3: Must specify authorizations</a></td></tr>
+<tr><td><a href="4">#4: Verify UI on Authorizations Page</a></td></tr>
+<tr><td><a href="5">#5: Automatic login and redirect</a></td></tr>
+<tr><td><a href="5b">#5b: Automatic login and redirect (dirty URLs)</a></td></tr>
+<tr><td><a href="6">#6: Manually assigned roles should persist</a></td></tr>
+<tr><td><a href="7">#7: Logged in view is not cached</a></td></tr>
+<tr><td><a href="webauth-install">Disable, Uninstall and Re-enable WebAuth</a></td></tr>
+<tr><td><a href="8">#8: Only one mapping necessary to get role</a></td></tr>
+<tr><td><a href="9">#9: Removing mapping, removes role</a></td></tr>
+<tr><td><a href="9b">#9b: Removing one mapping of two, does not remove role</a></td></tr>
+<tr><td><a href="13">#13: Removed Auto-login option</a></td></tr>
+<tr><td><a href="14">#14: Correct spelling of WebAuth</a></td></tr>
+<tr><td><a href="15">#15: Remove WebAuth domain option</a></td></tr>
+<tr><td><a href="16">#16: Post-login Destination</a></td></tr>
+<tr><td><a href="17">#17: Rename Groups Tab to Mappings</a></td></tr>
+<tr><td><a href="18">#18: Rename admin paths</a></td></tr>
+<tr><td><a href="19">#19: Removed default role option</a></td></tr>
+<tr><td><a href="20">#20: Primary ID error</a></td></tr>
+<tr><td><a href="22">#22: Path appended twice</a></td></tr>
+<tr><td><a href="25">#25: Duplicate mappings should be rejected</a></td></tr>
+<tr><td><a href="26">#26: Empty Mappings are rejected</a></td></tr>
+<tr><td><a href="50">#50: Local users email test</a></td></tr>
+<tr><td><a href="72">#72 Users can change other fields</a></td></tr>
+<tr><td><a href="73">#73: rawurlencode error</a></td></tr>
+<tr><td><a href="112">#112: New local accounts should keep email intact</a></td></tr>
+</tbody></table>
+</body>
+</html>
