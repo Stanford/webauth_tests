@@ -12,31 +12,13 @@
 <tr><td rowspan="1" colspan="3">User Create</td></tr>
 </thead><tbody>
 <!--User Create-->
+<!--Log Admin In-->
 <tr>
-	<td>open</td>
-	<td>${site_url}/logout</td>
-	<td></td>
+	<td>rollup</td>
+	<td>local_user_login</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
-<tr>
-	<td>open</td>
-	<td>${site_url}/user/login</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=edit-name</td>
-	<td>${admin_id}</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=edit-pass</td>
-	<td>${admin_pwd}</td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>id=edit-submit</td>
-	<td></td>
-</tr>
+<!--First Delete the SUNet User-->
 <tr>
 	<td>open</td>
 	<td>${site_url}/admin/user/user</td>
