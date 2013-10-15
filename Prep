@@ -11,8 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">Prep</td></tr>
 </thead><tbody>
-<!--TODO: Make sure to Disable Auto Path-->
-<!--TODO: Content Access needs to be enabled for individual page content-->
+<!--Set up some variables for use with the rest of the tests.-->
 <tr>
 	<td>store</td>
 	<td>https://www.stanford.edu</td>
@@ -27,6 +26,12 @@
 	<td>store</td>
 	<td>${base_url}${site_dir}</td>
 	<td>site_url</td>
+</tr>
+<!--Login Link Text-->
+<tr>
+	<td>store</td>
+	<td>Login with your SUNetID</td>
+	<td>login_link_text</td>
 </tr>
 <!--SUNet User-->
 <tr>

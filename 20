@@ -47,7 +47,7 @@
 <!--Login as SUNet User-->
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Login with your SUNetID</td>
+	<td>link=${login_link_text}</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@
 <!--Login again as SUNet User-->
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Login with your SUNetID</td>
+	<td>link=${login_link_text}</td>
 	<td></td>
 </tr>
 <tr>

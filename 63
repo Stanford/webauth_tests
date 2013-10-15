@@ -120,7 +120,7 @@
 <!--Log in as the new user and log out-->
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Login with your SUNetID</td>
+	<td>link=${login_link_text}</td>
 	<td></td>
 </tr>
 <tr>
