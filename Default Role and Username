@@ -13,12 +13,12 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/user/login</td>
+	<td>${site_url}/user/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user/list</td>
+	<td>${site_url}/admin/user/user/list</td>
 	<td></td>
 </tr>
 <tr>

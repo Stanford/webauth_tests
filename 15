@@ -20,7 +20,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth</td>
+	<td>${site_url}/admin/settings/webauth</td>
 	<td></td>
 </tr>
 <tr>

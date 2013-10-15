@@ -22,22 +22,22 @@
 <tr>
 	<td>rollup</td>
 	<td>disable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>uninstall_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>enable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <!--Add a new mapping-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td>${site_url}/admin/settings/webauth/mappings</td>
 	<td></td>
 </tr>
 <tr>

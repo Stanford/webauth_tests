@@ -15,12 +15,12 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <!--Turn on per-node content access for the page content type-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/content/node-type/page/access</td>
+	<td>${site_url}/admin/content/node-type/page/access</td>
 	<td></td>
 </tr>
 <tr>

@@ -14,12 +14,12 @@
 <!--Multi-valued parameters in query string used to throw errors about rawurlencode expecting strings rather than arrays-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/node/?test[0]=test</td>
+	<td>${site_url}/node/?test[0]=test</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/node/?test[0]=test</td>
+	<td>${site_url}/node/?test[0]=test</td>
 	<td></td>
 </tr>
 <tr>

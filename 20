@@ -20,28 +20,28 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td>${site_url}/admin/settings/webauth/mappings</td>
 	<td></td>
 </tr>
 <!--Refresh WebAuth module settings-->
 <tr>
 	<td>rollup</td>
 	<td>disable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>uninstall_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>enable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <!--Login as SUNet User-->
@@ -62,7 +62,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <!--Login again as SUNet User-->
@@ -83,7 +83,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <!--Logout-->

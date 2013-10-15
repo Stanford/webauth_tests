@@ -21,7 +21,7 @@
 <!--Make sure that "change own username" is enabled for authenticated users. That way, later we can test to make sure SUNet Users can't change it thanks to WMD-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/permissions</td>
+	<td>${site_url}/admin/user/permissions</td>
 	<td></td>
 </tr>
 <tr>
@@ -37,7 +37,7 @@
 <!--Make sure that timezone support is enabled-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/date-time</td>
+	<td>${site_url}/admin/settings/date-time</td>
 	<td></td>
 </tr>
 <tr>
@@ -47,7 +47,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <!--Password and Username can't be changed by user-->

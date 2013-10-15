@@ -20,7 +20,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user/create</td>
+	<td>${site_url}/admin/user/user/create</td>
 	<td></td>
 </tr>
 <tr>
@@ -55,7 +55,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td>${site_url}/admin/user/user</td>
 	<td></td>
 </tr>
 <tr>

@@ -15,23 +15,23 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <!--Refresh WebAuth module settings-->
 <tr>
 	<td>rollup</td>
 	<td>disable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>uninstall_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>enable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 </tbody></table>
 </body>

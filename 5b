@@ -16,12 +16,12 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <!--Turn off clean URLs-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/clean-urls</td>
+	<td>${site_url}/admin/settings/clean-urls</td>
 	<td></td>
 </tr>
 <tr>
@@ -37,7 +37,7 @@
 <!--Create Test Page only SUNet users can see-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/?q=node/add/page</td>
+	<td>${site_url}/?q=node/add/page</td>
 	<td></td>
 </tr>
 <tr>
@@ -102,13 +102,13 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}?q=logout</td>
+	<td>${site_url}?q=logout</td>
 	<td></td>
 </tr>
 <!--Attempt to visit protected page, should auto-login-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}?q=restricted-to-SUNET</td>
+	<td>${site_url}?q=restricted-to-SUNET</td>
 	<td></td>
 </tr>
 <tr>
@@ -128,12 +128,12 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}?q=logout</td>
+	<td>${site_url}?q=logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}?q=user/login</td>
+	<td>${site_url}?q=user/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -154,7 +154,7 @@
 <!--Delete test page-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}?q=restricted-to-SUNET</td>
+	<td>${site_url}?q=restricted-to-SUNET</td>
 	<td></td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@
 <!--Turn clean URLs back on-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/clean-urls</td>
+	<td>${site_url}/admin/settings/clean-urls</td>
 	<td></td>
 </tr>
 <tr>

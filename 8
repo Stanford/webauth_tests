@@ -22,17 +22,17 @@
 <tr>
 	<td>rollup</td>
 	<td>disable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>uninstall_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <tr>
 	<td>rollup</td>
 	<td>enable_module</td>
-	<td>base_url=${base_url}${site_dir}, module=webauth</td>
+	<td>base_url=${site_url}, module=webauth</td>
 </tr>
 <!--Add a mapping from a role the user has and a workgroup the user is not in-->
 <tr>
@@ -42,7 +42,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td>${site_url}/admin/user/user</td>
 	<td></td>
 </tr>
 <tr>
@@ -62,7 +62,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -84,11 +84,11 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td>${site_url}/admin/user/user</td>
 	<td></td>
 </tr>
 <tr>

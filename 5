@@ -16,12 +16,12 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <!--Create a page only SUNet users can see-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/node/add/page</td>
+	<td>${site_url}/node/add/page</td>
 	<td></td>
 </tr>
 <tr>
@@ -87,7 +87,7 @@
 <!--make sure post-login destination is empty, or the test will fail-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth</td>
+	<td>${site_url}/admin/settings/webauth</td>
 	<td></td>
 </tr>
 <tr>
@@ -102,13 +102,13 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <!--Attempt to login, this should automatically log the user in-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/restricted-to-SUNET</td>
+	<td>${site_url}/restricted-to-SUNET</td>
 	<td></td>
 </tr>
 <tr>
@@ -131,11 +131,11 @@
 <tr>
 	<td>rollup</td>
 	<td>local_user_login</td>
-	<td>base_url=${base_url}${site_dir}, username=${admin_id}, password=${admin_pwd}</td>
+	<td>base_url=${site_url}, username=${admin_id}, password=${admin_pwd}</td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/restricted-to-SUNET</td>
+	<td>${site_url}/restricted-to-SUNET</td>
 	<td></td>
 </tr>
 <tr>

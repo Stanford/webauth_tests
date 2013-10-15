@@ -14,12 +14,12 @@
 <!--User does not gets role from mapping-->
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/user/login</td>
+	<td>${site_url}/user/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -39,7 +39,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td>${site_url}/admin/settings/webauth/mappings</td>
 	<td></td>
 </tr>
 <tr>
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td>${site_url}/admin/user/user</td>
 	<td></td>
 </tr>
 <tr>
@@ -79,7 +79,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <tr>
@@ -99,12 +99,12 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/logout</td>
+	<td>${site_url}/logout</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/user/login</td>
+	<td>${site_url}/user/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -124,7 +124,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/user/user</td>
+	<td>${site_url}/admin/user/user</td>
 	<td></td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>${base_url}${site_dir}/admin/settings/webauth/mappings</td>
+	<td>${site_url}/admin/settings/webauth/mappings</td>
 	<td></td>
 </tr>
 <tr>
