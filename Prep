@@ -19,7 +19,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>/dept/its/cgi-bin/group/documentation/wmd/</td>
+	<td>/group/group-name/cgi-bin/drupal-name</td>
 	<td>site_dir</td>
 </tr>
 <tr>
@@ -36,12 +36,12 @@
 <!--SUNet User-->
 <tr>
 	<td>store</td>
-	<td>marco.wise@stanford.edu</td>
+	<td>sunet-email@stanford.edu</td>
 	<td>email</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>mrmarco@stanford.edu</td>
+	<td>sunetid@stanford.edu</td>
 	<td>sunetid</td>
 </tr>
 <!--Admin User-->
