@@ -13,11 +13,6 @@
 </thead><tbody>
 <!--Path appended twice to the URL-->
 <tr>
-	<td>open</td>
-	<td>${site_url}/logout</td>
-	<td></td>
-</tr>
-<tr>
 	<td>clickAndWait</td>
 	<td>link=${login_link_text}</td>
 	<td></td>

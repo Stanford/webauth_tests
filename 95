@@ -4,17 +4,22 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://www.stanford.edu/" />
-<title>7</title>
+<title>#95: user/login redirects to itself</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">7</td></tr>
+<tr><td rowspan="1" colspan="3">#95: user/login redirects to itself</td></tr>
 </thead><tbody>
-<!--Logged in view shouldn't be cached-->
+<!--/user/login destination is not itself-->
 <tr>
 	<td>open</td>
 	<td>${site_url}/logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${site_url}/user/login</td>
 	<td></td>
 </tr>
 <tr>
@@ -28,35 +33,11 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyTextPresent</td>
-	<td>My account</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${site_url}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${site_url}/logout</td>
-	<td></td>
-</tr>
-<tr>
 	<td>verifyTextNotPresent</td>
-	<td>${sunetid}</td>
+	<td>Access denied</td>
 	<td></td>
 </tr>
-<tr>
-	<td>verifyTextNotPresent</td>
-	<td>My account</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${site_url}/logout</td>
-	<td></td>
-</tr>
+
 </tbody></table>
 </body>
 </html>

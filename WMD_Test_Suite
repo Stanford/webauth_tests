@@ -25,7 +25,6 @@
 <tr><td><a href="5b">#5b: Automatic login and redirect (dirty URLs)</a></td></tr>
 <tr><td><a href="6">#6: Manually assigned roles should persist</a></td></tr>
 <tr><td><a href="7">#7: Logged in view is not cached</a></td></tr>
-<tr><td><a href="webauth-install">Disable, Uninstall and Re-enable WebAuth</a></td></tr>
 <tr><td><a href="8">#8: Only one mapping necessary to get role</a></td></tr>
 <tr><td><a href="9">#9: Removing mapping, removes role</a></td></tr>
 <tr><td><a href="9b">#9b: Removing one mapping of two, does not remove role</a></td></tr>
@@ -44,6 +43,7 @@
 <tr><td><a href="72">#72 Users can change other fields</a></td></tr>
 <tr><td><a href="73">#73: rawurlencode error</a></td></tr>
 <tr><td><a href="112">#112: New local accounts should keep email intact</a></td></tr>
+<tr><td><a href="webauth-install">Disable, Uninstall and Re-enable WebAuth</a></td></tr>
 </tbody></table>
 </body>
 </html>

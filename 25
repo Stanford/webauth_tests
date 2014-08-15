@@ -68,7 +68,7 @@
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>This webauth group is already mapped to this Drupal role!</td>
+	<td>This workgroup is already mapped to this Drupal role!</td>
 	<td></td>
 </tr>
 <tr>
